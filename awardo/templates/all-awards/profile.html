@@ -1,0 +1,31 @@
+{%extends 'all-awards/base.html'%}
+{% load bootstrap3 %} {% load staticfiles %}
+ {% block content %}
+ <html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <boby>
+            
+ <div class="container" >
+    <div class="row">
+        <h1> INSTAGRAM PROFILE</h1>
+       
+        <div class="col-md-3" id="prof"> 
+       
+     <img src="{{profiles.picture.url}}"  class="img-responsive" alt="" id ="imge">
+     <p>Names:{{profiles.name}}</p>
+ 
+     BIO:  {% autoescape on %}
+     {{profiles.bio| safe}}
+    {% endautoescape %}
+
+   </div>
+ 
+
+ </div>
+ </div>
+
+</boby>
+ </html>
+ {% endblock %}
