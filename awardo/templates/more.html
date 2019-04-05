@@ -1,0 +1,76 @@
+{% extends 'all-awards/base.html' %}
+{% load bootstrap3 %} {% load staticfiles %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>New Article</title>
+  {{form.media}}
+
+{% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/baseinsto.css' %}"> {% endblock %}
+
+</head>
+
+<body>
+    {% if project %} 
+    <div class="container" id="index" >
+        <div class="row" >
+              
+                  
+            <a href="{{project.project_url}}"><h1>{{project.project_name}}</h1> </a>    
+
+<div >
+    <div class="com">
+             
+            <div class=imges>
+              
+ <img src="{{project.image.url}}"  class="img-responsive" alt="" id="more" >
+            
+            <div class="top-right">
+              <div class="col-md-4" id="u"><h4>usability:</h4>{{usability}}</div>
+ 
+              <div class="col-md-4" id="d"><h4>design:</h4> {{design}}</div>
+                <div class="col-md-4" id="c"><h4> content:</h4>{{content}}</div>
+</div>  
+</div>
+ <h4>Project-Name: {{project.project_name}}</h4>
+ <h4>Description: {{project.description}}</h4>
+ <h4>Technology: {{project.technologies_used }}</h4>
+ <h4>Post-Date: {{project.posted_on}}</h4>
+  
+
+</div> 
+<button type="button" class="btn btn-info btn-lg" id="butn"><a href="/awards/vote/{{project.id}}" >Rate</a></button><br><br>
+</div>
+
+</div>  
+</div>
+
+    
+
+
+        
+              
+        
+                
+                     
+
+
+{% else %}
+<p>No post yet add post to vote</p>
+{% endif %}
+
+
+
+
+</body>
+
+</html>
+{% endblock %}
