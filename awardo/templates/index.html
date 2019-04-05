@@ -13,24 +13,19 @@
                     <div class="row" >
                           
                               
-                        <h1> WELCOME TO INSTAGRAM</h1>
+                        <h1> WELCOME TO PROJECT</h1>
 
-                        
+                                  
 
 
                        
-        {% for im in images%}
-        
+        {% for im in projects%}
+        {%if im.id%}
         <div class="col-md-3" id="im"> 
-        <a href="/instagram/comments\{{im.id}}"> <img src="{{im.image.url}}"  class="img-responsive" alt="" ><br></a>
-         
-         <p>Name:{{im.image_name}}</p>
-         <p>Caption:{{im.image_caption}}</p>
-          <p>Post-Date:{{im.post_date}}</p>
-        
-       
-</div> 
-    {%endfor%}
+            <a href="{% url 'more' im.id %}" ><img src="{{im.image.url}}"  class="img-responsive" alt="" ></a>     
+        </div> 
+        {%endif%}
+        {%endfor%}
 
 
 </div>
