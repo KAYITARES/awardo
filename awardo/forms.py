@@ -9,8 +9,8 @@ class ProjectForm(forms.ModelForm):
         model = Project
         exclude = ['user']
 
-class VotesForm(forms.Form):
+class VotesForm(forms.ModelForm):
     class Meta:
         model = Votes
-        exclude = ['user']
+        exclude = ['user','project','posted_on']
 
