@@ -12,7 +12,7 @@ urlpatterns=[
     url(r'^awards/vote/(\d+)',views.vote,name="vote"),
     url(r'^search/', views.search,name='search_project'),
     url(r'^api/merch/$', views.ProfileList.as_view()),
-    url(r'^api/project/$', views.ProjectList.as_view())
+    url(r'^api/project/$', views.ProjectList.as_view()),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
