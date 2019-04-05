@@ -39,6 +39,7 @@ class Project(models.Model):
     posted_on = models.DateTimeField(auto_now=True,)
 
 
+
     def save_projects(self):
         self.save()
     
@@ -46,6 +47,11 @@ class Project(models.Model):
     def get_projects(cls):
         projects = cls.objects.all()
         return projects
+    @classmethod
+    def search_project(cls,search_term):
+        project = cls.objects.filter(project_name__icontains=search_term)
+        return project
+
 
 class Votes(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
